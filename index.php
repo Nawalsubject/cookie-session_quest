@@ -13,6 +13,7 @@ if (!empty($_GET)) {
 
     if(!empty($_GET['deconnexion'])) {
         session_destroy();
+        setcookie('cart','', time() + 365 * 24 * 3600, null, null, false, true);
         header('Location: login.php');
     }
 }
